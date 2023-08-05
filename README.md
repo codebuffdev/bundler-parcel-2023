@@ -1,7 +1,9 @@
 # parcel-portfolio-2023
 
-Exploring Parcel the web application bundler. <br>
+Exploring Parcel the web application bundler just like webpack & vite. <br>
 Parcel is a zero configuration web application bundler .
+
+Bundlers are packages, if we want to use them we need a package manager either it could be yarn or npm. I'm going with npm.
 
 ## adding parcel to the project
 
@@ -35,11 +37,14 @@ Parcel is a web application bundler, and this command initiates its bundling pro
 
 HMR is a feature provided by Parcel. HMR allows us to update your application's code in real-time while the application is running, without requiring a full page reload.
 
-Enabling HMR
+Enabling HMR <br>
 
 1. Start Development Server: `npx parcel serve appEntryPoint`
 2. Automatic HMR: Parcel automatically detects changes in our code(HTML,JS,CSS) & updates the application in the browser on the fly.
     - E.g, We're working on a React component and you save your changes, Parcel will update only the changed component in the browser without reloading the entire page.
+
+Working of HMR <br>
+A file watcher algorithm written in c++. It keeps track of all the files which are changing realtime & it tells the server to reload.
 
 ## Package scripts
 
@@ -78,4 +83,53 @@ So far, we’ve been running the parcel CLI directly `npx parcel serve appEntryP
 single-page applications (SPAs) will have single entry points.
 multi-Page Application (MPA) will have Multiple Entry Points.
 
-# TO BE CONTINUED
+## Transpilation
+
+Modern javascript code compatible with older versions of browsers.
+
+The "browserslist" field in the package.json is used to specify the range of browser versions that your project should support. According to this parcel takes the help of babel in producing transpiled versions.
+
+```json
+    "browserslist": ["last 2 versions"]
+```
+
+last 2 versions of all browsers should support to load my project.
+
+## npx parcel src/index.html --https
+
+Sometime we need to test our application on https because something only works on HTTPS. <br>
+Parcel gives us a functionality that we can just build our app on https on dev machine by the command.
+
+## Transitive Dependencies
+
+We have our packages manager which handles & takes care of our transitive dependencies of out code. <br>
+If we have to build a production application ready app, which uses the all optimizations like minify, cleaning, building, compression, consistent hashing, etc then we need to perform all these. <br>
+But we can't do this all alone, we need some dependencies on it. Those dependencies are might dependents of other dependencies. This tree is transitive dependencies.
+
+## Tree shaking
+
+In production builds, Parcel statically analyzes and removes everything that isn't used. This is called "tree shaking" or "dead code elimination".<br>
+E.g. Suppose our application is importing a library which has a lot of functions. Then all of the functions will come into our code. But we don't want them all , we may use one or two of them. Here parcel will ignore all the unused functions.
+
+# Parcel Features in glance:
+
+1. HMR (Hot Module Reloading)
+2. File watcher algorithms (C++)
+3. Bundling
+4. Minify code
+5. Cleaning our code
+6. Dev & production build
+7. Super fast build algorithm
+8. Image optimization
+9. Caching while development
+10. Compression
+11. Compatibility with older browsers
+12. Https on dev
+13. Port number
+14. Consistence hashing algorithm
+15. Zero configuration
+16. Tree shacking
+
+# `Keep On exploring`
+
+[Parcel Documentation](https://parceljs.org/docs/)
