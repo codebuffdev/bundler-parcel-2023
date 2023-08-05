@@ -77,3 +77,5 @@ So far, we’ve been running the parcel CLI directly `npx parcel serve appEntryP
 
 single-page applications (SPAs) will have single entry points.
 multi-Page Application (MPA) will have Multiple Entry Points.
+
+# TO BE CONTINUED
