@@ -1,0 +1,26 @@
+{
+	"name": "bundler-parcel",
+	"version": "1.0.0",
+	"description": "Parcel the web application bundler",
+	"source": "src/index.html",
+	"scripts": {
+		"start": "parcel",
+		"build": "parcel build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/codebuffdev/parcel-portfolio-2023.git"
+	},
+	"keywords": [
+		"parcel"
+	],
+	"author": "codebuffdev",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/codebuffdev/parcel-portfolio-2023/issues"
+	},
+	"homepage": "https://github.com/codebuffdev/parcel-portfolio-2023#readme",
+	"devDependencies": {
+		"parcel": "^2.9.3"
+	}
+}
